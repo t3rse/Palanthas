@@ -8,19 +8,19 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 
 
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
-          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css" />
+	<link href="../styles/style.css" rel="stylesheet" type="text/css" />
 
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	
+    <!-- tiny mce -->
+    <script src="Script/tinymce/tiny_mce.js"></script>    
+	
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-    <style type="text/css">
+	
+	<script src="../script/palanthas.js"></script>
 
-    </style>
-<script type="text/javascript">
-
-/* do */
-
-</script>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Palanthas</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -45,18 +45,50 @@
     </div>
 
     <div class="container">
+      <div style="padding-top:30px;">
+		<br/><br/>
+		<!-- tool definition --> 
+		<div id="contain">
+			<div id="quigleyExplainer">
+				Palanthas is a light weight, tabbed notepad that uses local storage (HTML5) so that your notes are autosaved.
+			</div>
+		 
+			<div id="log"></div>
+		   <div>
+				<div id="currentTabs">
+				</div>
+				<input class='ui-button' type="button" id="saveTabButton" value="New Tab" />
+				<input class='ui-button' type="button" id="removeTabButton" value="Remove Current Document" />
+			</div>
+			<div id="editorContainerDiv">
+				<textarea id="myNotes">Scribble!</textarea>
+			</div>
+			<hr />
+			<script type="text/javascript">
+				$(function () {
+					$("#editorContainerDiv, #myNotes").css("height", "800px");
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+					// start quigley
+					Quigley.init(
+									tinyMCE, // editor
+									$("#saveTabButton"), // save button
+									$("#removeTabButton"), // remove button
+									$("#currentTabs"), // tabs
+									$("#log"), // infoDisplay
+									localStorage // use local storage
+					);
+
+				});
+			</script>
+			<p>Follow Palanthas on <a id="githubLink" href="https://github.com/t3rse/Palanthas">Github</a></p>
+		</div>		
+		
       </div>
 
+	  <div>
+		<a name="about">&nbsp;</a>
+		<h3>Palanthas is a project by t3rse</h3>
+	  </div>
     </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   </body>
 </html>

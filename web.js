@@ -6,6 +6,8 @@ var async = require('async')
 //  , db      = require('./models');
 
 var app = express();
+app.use("/styles", express.static(__dirname + '/styles'));
+app.use("/script", express.static(__dirname + '/script'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 8080);

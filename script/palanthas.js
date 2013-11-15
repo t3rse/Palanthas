@@ -1,12 +1,12 @@
-﻿/* QUIGLEY - Yet Another Text Editor :: https://github.com/t3rse/Quigley
+﻿/* PALANTHAS - Yet Another Text Editor :: https://github.com/t3rse/Palanthas
 /**
 * @author t3rse (David Seruyange) / http://www.t3rse.com
 * @author you? - would love comments / feedback
 */
 
-var Quigley = (function () {
+var Palanthas = (function () {
     var _ = {
-        LOCAL_DATA_STORE: "quigley.data",
+        LOCAL_DATA_STORE: "palanthas.data",
         DEFAULT_DOC_NAME: "Default",
         SAVE_LOOP_SPEED: 250,
         enableAutoSaveFlag: true,
@@ -74,7 +74,7 @@ var Quigley = (function () {
                 displayName: me.documentManagement.defaultDocument,
                 created: new Date()
             }];
-            // on the first load, save quigley.data for the future:
+            // on the first load, save palanthas.data for the future:
             me.documentManagement.storeData(_.LOCAL_DATA_STORE, JSON.stringify(me.documentManagement.documentStore));
         }
         me.rendering.renderContent();
@@ -206,7 +206,7 @@ var Quigley = (function () {
     me.ui.currentTabs = null;
 
     /**********************************************************************************
-    ***** INITIALIZE QUIGLEY **********************************************************
+    ***** INITIALIZE PALANTHAS ********************************************************
     **********************************************************************************/
 
     me.init = function (targetEditor, addButton, removeButton, currentTabs, logViewDiv, storageProvider) {

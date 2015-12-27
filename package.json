@@ -9,9 +9,5 @@
   "dependencies": {
     "express": "^4.13.3",
     "async": "^0.2.9"
-  },
-  "engines": {
-    "node": "0.10.12",
-    "npm": "1.2.30"
   }
 }
